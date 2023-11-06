@@ -1,24 +1,24 @@
 <template>
-  <va-input v-model="inputText" v-bind:placeholder="placeholder" />
+  <va-input v-model="inputText" :placeholder="placeholder" />
 </template>
 <script setup>
 const props = defineProps({
   message: {
     type: String,
-    default: ''
+    default: "",
   },
   placeholder: {
     type: String,
-    default: ''
-  }
-})
-const emits = defineEmits(['input'])
+    default: "",
+  },
+});
+const emits = defineEmits(["input"]);
 const inputText = computed({
   get() {
-    return props.message
+    return props.message;
   },
   set(value) {
-    emits('input', value)
-  }
-})
+    emits("input", value);
+  },
+});
 </script>

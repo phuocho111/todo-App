@@ -1,9 +1,9 @@
 <template>
   <button
     class="base-button"
-    v-bind:class="className"
-    v-bind:disabled="isdisabled"
-    v-on:click="handleClick"
+    :class="className"
+    :disabled="isdisabled"
+    @click="handleClick"
   >
     <slot />
   </button>
@@ -12,19 +12,19 @@
 defineProps({
   isdisabled: {
     type: Boolean,
-    default: false
+    default: false,
   },
   className: {
     type: String,
-    default: 'default'
-  }
-})
-const emit = defineEmits(['submit'])
+    default: "default",
+  },
+});
+const emit = defineEmits(["submit"]);
 
 const handleClick = () => {
-  emit('submit')
-}
+  emit("submit");
+};
 </script>
 <stype scoped lang="scss">
-@import url('../assets/scss/common/components/base-button.scss');
+@import url("../assets/scss/common/components/base-button.scss");
 </stype>

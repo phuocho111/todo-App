@@ -1,8 +1,8 @@
 <template>
   <va-pagination
-    v-bind:model-value="pageValue"
+    :model-value="pageValue"
     class="base-pagging"
-    v-bind:pages="totalPage"
+    :pages="totalPage"
     input
   />
 </template>
@@ -10,22 +10,22 @@
 const props = defineProps({
   currentPage: {
     type: Number,
-    default: 1
+    default: 1,
   },
   totalPage: {
     type: Number,
-    default: 1
-  }
-})
-const emits = defineEmits(['input'])
+    default: 1,
+  },
+});
+const emits = defineEmits(["input"]);
 const pageValue = computed({
   get() {
-    return props.currentPage
+    return props.currentPage;
   },
   set(value) {
-    emits('input', value)
-  }
-})
+    emits("input", value);
+  },
+});
 </script>
 <style lang="scss" scoped>
 @import url(../assets/scss/common/components/base-pagging.scss);
